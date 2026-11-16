@@ -68,6 +68,10 @@
   .haikal_kontak_grid {
     grid-template-columns: 1fr;
   }
+
+  .haikal_bantuan_grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
