@@ -1,0 +1,250 @@
+@media (max-width: 1024px) {
+  .haikal_footer_grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .haikal_grid_produk {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .haikal_kategori_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .haikal_manfaat_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .haikal_galeri_tentang {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .haikal_voucher_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .haikal_hero_visual {
+    height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .haikal_hero_grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .haikal_hero_visual {
+    width: 100%;
+    max-width: 420px;
+    height: 340px;
+    margin: 0 auto;
+  }
+
+  .haikal_detail_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_detail_galeri {
+    position: static;
+  }
+
+  .haikal_detail_bawah {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_keranjang_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_ringkasan {
+    position: static;
+  }
+
+  .haikal_tentang_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_kontak_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .haikal_header_dalam {
+    height: 64px;
+  }
+
+  .haikal_nav {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 1rem 1.5rem 1.5rem;
+    background: var(--haikal_krem);
+    border-bottom: 1px solid var(--haikal_garis);
+    box-shadow: 0 20px 40px rgba(31, 31, 31, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-130%);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .haikal_nav.buka {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .haikal_menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
+  .haikal_menu_tautan {
+    display: block;
+    padding: 0.7rem 0.5rem;
+    border-radius: 10px;
+  }
+
+  .haikal_tombol_menu {
+    display: inline-flex;
+  }
+
+  .haikal_keranjang_tautan {
+    padding: 0.55rem 0.8rem;
+  }
+
+  .haikal_keranjang_teks {
+    display: none;
+  }
+
+  .haikal_grid_produk {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .haikal_bagian {
+    padding: 3.5rem 0;
+  }
+
+  .haikal_hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .haikal_hero_stat {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .haikal_footer_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .haikal_cta_dalam {
+    padding: 2rem;
+  }
+
+  .haikal_voucher_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_nilai_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_toolbar {
+    align-items: stretch;
+  }
+
+  .haikal_toolbar_kanan {
+    flex: 1;
+  }
+
+  .haikal_cari {
+    flex: 1;
+  }
+
+  .haikal_cari input {
+    width: 100%;
+  }
+
+  .haikal_detail_beli {
+    flex-direction: column;
+  }
+
+  .haikal_tombol_lebar {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .haikal_container {
+    padding: 0 18px;
+  }
+
+  .haikal_grid_produk {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_kategori_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_manfaat_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_galeri_tentang {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .haikal_footer_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_hero_judul {
+    font-size: 2.1rem;
+  }
+
+  .haikal_hero_visual {
+    height: 300px;
+  }
+
+  .haikal_hero_kartu_a {
+    width: 160px;
+    height: 210px;
+  }
+
+  .haikal_hero_kartu_b {
+    width: 170px;
+    height: 230px;
+  }
+
+  .haikal_hero_kartu_c {
+    display: none;
+  }
+
+  .haikal_form_baris {
+    grid-template-columns: 1fr;
+  }
+
+  .haikal_item_keranjang {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .haikal_item_gambar {
+    width: 72px;
+    height: 90px;
+  }
+
+  .haikal_item_kanan {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

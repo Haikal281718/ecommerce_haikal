@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang & Checkout - Haikal Threads</title>
+  <meta name="description" content="Kelola produk di keranjang Haikal Threads, lihat total harga otomatis, dan selesaikan pesanan melalui formulir checkout.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="haikal_header" class="haikal_header">
+    <div class="haikal_container haikal_header_dalam">
+      <a class="haikal_logo" href="index.html">Haikal<span>Threads</span></a>
+      <nav id="haikal_nav" class="haikal_nav" aria-label="Navigasi utama">
+        <ul class="haikal_menu">
+          <li><a class="haikal_menu_tautan" href="index.html">Beranda</a></li>
+          <li><a class="haikal_menu_tautan" href="produk.html">Katalog</a></li>
+          <li><a class="haikal_menu_tautan" href="promo.html">Promo</a></li>
+          <li><a class="haikal_menu_tautan" href="tentang.html">Tentang</a></li>
+          <li><a class="haikal_menu_tautan" href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="haikal_header_aksi">
+        <a class="haikal_keranjang_tautan" href="keranjang.html" aria-label="Buka keranjang">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="haikal_keranjang_teks">Keranjang</span>
+          <span id="haikal_badge_keranjang" class="haikal_badge">0</span>
+        </a>
+        <button id="haikal_tombol_menu" class="haikal_tombol_menu" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="haikal_nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="haikal_page_header">
+      <div class="haikal_container">
+        <p class="haikal_eyebrow haikal_eyebrow_terang">Checkout</p>
+        <h1>Keranjang Belanja</h1>
+        <p>Periksa kembali produk pilihanmu, lalu lengkapi data pengiriman untuk menyelesaikan pesanan.</p>
+      </div>
+    </section>
+
+    <section class="haikal_keranjang">
+      <div class="haikal_container">
+        <div class="haikal_kosong" id="haikal_keranjang_kosong" hidden>
+          <h2>Keranjangmu masih kosong</h2>
+          <p>Yuk pilih produk favoritmu terlebih dahulu sebelum checkout.</p>
+          <a href="produk.html" class="haikal_tombol haikal_tombol_utama">Mulai Belanja</a>
+        </div>
+
+        <div class="haikal_keranjang_grid" id="haikal_keranjang_isi">
+          <div class="haikal_panel">
+            <h2>Produk di Keranjang</h2>
+            <div id="haikal_daftar_keranjang"></div>
+          </div>
+
+          <aside class="haikal_panel haikal_ringkasan">
+            <h2>Ringkasan Pesanan</h2>
+            <div class="haikal_ringkasan_baris">
+              <span>Subtotal (<span id="haikal_jumlah_item">0</span> item)</span>
+              <strong id="haikal_subtotal">Rp0</strong>
+            </div>
+            <div class="haikal_ringkasan_baris">
+              <span>Ongkos Kirim</span>
+              <strong id="haikal_ongkir">Rp0</strong>
+            </div>
+            <div class="haikal_ringkasan_baris haikal_ringkasan_total">
+              <span>Total</span>
+              <strong id="haikal_total">Rp0</strong>
+            </div>
+
+            <form id="haikal_form_checkout" class="haikal_form" novalidate>
+              <div class="haikal_field">
+                <label for="haikal_nama">Nama Lengkap</label>
+                <input type="text" id="haikal_nama" name="nama" autocomplete="name" placeholder="Nama penerima">
+                <small class="haikal_error"></small>
+              </div>
+              <div class="haikal_form_baris">
+                <div class="haikal_field">
+                  <label for="haikal_email">Email</label>
+                  <input type="email" id="haikal_email" name="email" autocomplete="email" placeholder="nama@email.com">
+                  <small class="haikal_error"></small>
+                </div>
+                <div class="haikal_field">
+                  <label for="haikal_telp">No. Telepon</label>
+                  <input type="tel" id="haikal_telp" name="telp" autocomplete="tel" placeholder="0812xxxxxxx">
+                  <small class="haikal_error"></small>
+                </div>
+              </div>
+              <div class="haikal_field">
+                <label for="haikal_alamat">Alamat Lengkap</label>
+                <textarea id="haikal_alamat" name="alamat" placeholder="Jalan, nomor rumah, RT/RW, kecamatan"></textarea>
+                <small class="haikal_error"></small>
+              </div>
+              <div class="haikal_form_baris">
+                <div class="haikal_field">
+                  <label for="haikal_kota">Kota</label>
+                  <input type="text" id="haikal_kota" name="kota" autocomplete="address-level2" placeholder="Jakarta Selatan">
+                  <small class="haikal_error"></small>
+                </div>
+                <div class="haikal_field">
+                  <label for="haikal_kodepos">Kode Pos</label>
+                  <input type="text" id="haikal_kodepos" name="kodepos" inputmode="numeric" placeholder="12345">
+                  <small class="haikal_error"></small>
+                </div>
+              </div>
+              <div class="haikal_field">
+                <span class="haikal_varian_label">Metode Pembayaran</span>
+                <div class="haikal_metode">
+                  <label><input type="radio" name="haikal_metode" value="Transfer Bank" checked> Transfer Bank</label>
+                  <label><input type="radio" name="haikal_metode" value="E-Wallet"> E-Wallet</label>
+                  <label><input type="radio" name="haikal_metode" value="COD"> Bayar di Tempat (COD)</label>
+                </div>
+              </div>
+              <div class="haikal_field">
+                <label for="haikal_catatan">Catatan (opsional)</label>
+                <textarea id="haikal_catatan" name="catatan" placeholder="Catatan untuk kurir atau penjual"></textarea>
+              </div>
+              <button type="submit" class="haikal_tombol haikal_tombol_utama haikal_tombol_lebar">Buat Pesanan</button>
+            </form>
+          </aside>
+        </div>
+
+        <div class="haikal_sukses" id="haikal_checkout_sukses" hidden>
+          <div class="haikal_sukses_ikon">&#10003;</div>
+          <h2>Pesanan berhasil dibuat!</h2>
+          <p>Nomor pesanan: <strong id="haikal_nomor_pesanan">-</strong></p>
+          <p>Total pembayaran: <strong id="haikal_sukses_total">Rp0</strong></p>
+          <p>Terima kasih telah berbelanja di Haikal Threads. Kami akan menghubungi kamu melalui email.</p>
+          <a href="produk.html" class="haikal_tombol haikal_tombol_utama">Lanjut Belanja</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="haikal_footer" class="haikal_footer">
+    <div class="haikal_container">
+      <div class="haikal_footer_grid">
+        <div class="haikal_footer_brand">
+          <a class="haikal_logo" href="index.html">Haikal<span>Threads</span></a>
+          <p>Fashion modern dengan bahan nyaman dan potongan yang dibuat untuk menemani setiap langkahmu.</p>
+          <div class="haikal_sosial">
+            <a href="kontak.html">Instagram</a>
+            <a href="kontak.html">TikTok</a>
+            <a href="kontak.html">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="haikal_footer_judul">Jelajahi</h3>
+          <div class="haikal_footer_tautan">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Katalog Produk</a>
+            <a href="promo.html">Promo</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="kontak.html">Kontak</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="haikal_footer_judul">Bantuan</h3>
+          <div class="haikal_footer_tautan">
+            <a href="keranjang.html">Keranjang</a>
+            <a href="kontak.html">Pengiriman</a>
+            <a href="kontak.html">Retur &amp; Tukar</a>
+            <a href="kontak.html">Panduan Ukuran</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="haikal_footer_judul">Hubungi Kami</h3>
+          <div class="haikal_footer_tautan">
+            <a href="mailto:haikal@gmail.com">haikal@gmail.com</a>
+            <a href="tel:+6289678103663">+62 896-781-03663</a>
+            <span>KOTA TASIKMALAYA</span>
+            <span>Senin-Sabtu, 09.00-18.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="haikal_footer_bawah">
+        <span>&copy; 2026 Haikal Threads. Seluruh hak cipta dilindungi.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="haikal_toast" class="haikal_toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data-produk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/keranjang.js"></script>
+</body>
+</html>
